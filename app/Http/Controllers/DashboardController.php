@@ -2,20 +2,22 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Project;
 use Illuminate\Http\Request;
 
 class DashboardController extends Controller
 {
     public function superAdminDashboard(){
-        return 'Super Admin';
+        $projects = Project::all();
+        return view('superadmin.dashboard', compact('projects'));
     }
     public function adminDashboard(){
-        return 'Admin';
+        return view('dashboard');
     }
     public function employeeDashboard(){
-        return 'Employee';
+        return view('dashboard');
     }
     public function clientDashboard(){
-        return 'Client';
+        return view('dashboard');
     }
 }
